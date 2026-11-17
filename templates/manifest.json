@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "capturedAt": "2026-11-17",
+    "platform": "Windows",
+    "t3Version": "0.1.10-nightly.20261116.4800",
+    "distribution": "Nightly",
+    "updateRepository": "pingdotgg/t3code",
+    "binaryModifications": "not-compared-with-upstream",
+    "pstackVersion": "0.15.43",
+    "modelCatalog": "configuration-snapshot-not-availability-proof"
+  },
+  "providers": {
+    "redromance_claude": {
+      "home": "redromance-claude",
+      "secretEnv": "ANTHROPIC_AUTH_TOKEN"
+    },
+    "deepseek_official": {
+      "home": "deepseek-official",
+      "secretEnv": "ANTHROPIC_AUTH_TOKEN"
+    },
+    "bailian": {
+      "home": "bailian",
+      "secretEnv": "ANTHROPIC_AUTH_TOKEN"
+    }
+  }
+}

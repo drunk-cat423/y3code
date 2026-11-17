@@ -1,0 +1,166 @@
+{
+  "providerInstances": {
+    "codex": {
+      "driver": "codex",
+      "enabled": true,
+      "config": {
+        "setupMode": "existing"
+      }
+    },
+    "claudeAgent": {
+      "driver": "claudeAgent",
+      "enabled": true,
+      "config": {
+        "launchArgs": "--append-system-prompt \"所有思考过程（thinking / reasoning）一律使用简体中文，不要用英文思考。正文回复默认中文。\""
+      }
+    },
+    "redromance_claude": {
+      "driver": "claudeAgent",
+      "displayName": "中",
+      "enabled": false,
+      "config": {
+        "customModels": [
+          "claude-fable-5",
+          "claude-fable-5-1",
+          "claude-fable-5-1-fast",
+          "claude-fable-5-2",
+          "claude-fable-5-2-fast",
+          "claude-fable-5-fast",
+          "claude-haiku-4-5",
+          "claude-haiku-4-5-fast",
+          "claude-haiku-5-5",
+          "claude-haiku-5-5-fast",
+          "claude-opus-4-5",
+          "claude-opus-4-5-fast",
+          "claude-opus-4-6",
+          "claude-opus-4-6-fast",
+          "claude-opus-4-7",
+          "claude-opus-4-7-fast",
+          "claude-opus-4-8",
+          "claude-opus-4-8-fast",
+          "claude-opus-5",
+          "claude-opus-5-5",
+          "claude-opus-5-5-fast",
+          "claude-opus-5-fast",
+          "claude-sonnet-4",
+          "claude-sonnet-4-5",
+          "claude-sonnet-4-5-fast",
+          "claude-sonnet-4-6",
+          "claude-sonnet-4-6-fast",
+          "claude-sonnet-4-fast",
+          "claude-sonnet-5",
+          "claude-sonnet-5-5",
+          "claude-sonnet-5-5-fast",
+          "claude-sonnet-5-fast"
+        ],
+        "launchArgs": "--append-system-prompt \"所有思考过程（thinking / reasoning）一律使用简体中文，不要用英文思考。正文回复默认中文。\"",
+        "homePath": "${T3_HOME}/userdata/provider-homes/redromance-claude"
+      }
+    },
+    "deepseek_official": {
+      "driver": "claudeAgent",
+      "displayName": "DS",
+      "enabled": false,
+      "config": {
+        "customModels": [
+          {
+            "slug": "deepseek-flash[1m]",
+            "name": "DeepSeek Flash (1M)"
+          },
+          {
+            "slug": "deepseek-v4-pro",
+            "name": "DeepSeek V4 Pro"
+          }
+        ],
+        "launchArgs": "--append-system-prompt \"所有思考过程（thinking / reasoning）一律使用简体中文，不要用英文思考。正文回复默认中文。\"",
+        "homePath": "${T3_HOME}/userdata/provider-homes/deepseek-official"
+      }
+    },
+    "bailian": {
+      "driver": "claudeAgent",
+      "displayName": "百",
+      "enabled": false,
+      "config": {
+        "customModels": [
+          {
+            "slug": "deepseek-v4.1-flash-1017",
+            "name": "DeepSeek-V4.1-Flash-1017 (百炼)"
+          },
+          {
+            "slug": "deepseek-v4-flash-0731",
+            "name": "DeepSeek V4 Flash 0731 (百炼)"
+          },
+          {
+            "slug": "deepseek-v4-pro",
+            "name": "DeepSeek V4 Pro (百炼·需付费额度)"
+          }
+        ],
+        "launchArgs": "--append-system-prompt \"所有思考过程（thinking / reasoning）一律使用简体中文，不要用英文思考。正文回复默认中文。\"",
+        "homePath": "${T3_HOME}/userdata/provider-homes/bailian"
+      }
+    }
+  },
+  "providerModelPreferences": {
+    "deepseek_official": {
+      "hiddenModels": [
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "claude-fable-5-2",
+        "claude-fable-5-1",
+        "claude-fable-5",
+        "claude-opus-5",
+        "claude-opus-4-8",
+        "claude-opus-4-7",
+        "claude-opus-4-6",
+        "claude-opus-4-5",
+        "claude-sonnet-5",
+        "claude-sonnet-4-6",
+        "claude-haiku-5-5",
+        "claude-haiku-4-5"
+      ],
+      "modelOrder": [
+        "deepseek-flash[1m]",
+        "deepseek-v4-pro"
+      ]
+    },
+    "bailian": {
+      "hiddenModels": [
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "claude-fable-5-2",
+        "claude-fable-5-1",
+        "claude-fable-5",
+        "claude-opus-5",
+        "claude-opus-4-8",
+        "claude-opus-4-7",
+        "claude-opus-4-6",
+        "claude-opus-4-5",
+        "claude-sonnet-5",
+        "claude-sonnet-4-6",
+        "claude-haiku-5-5",
+        "claude-haiku-4-5"
+      ],
+      "modelOrder": [
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4-flash-0731",
+        "deepseek-v4-pro"
+      ]
+    }
+  },
+  "defaultModelSelection": {
+    "instanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "options": [
+      {
+        "id": "reasoningEffort",
+        "value": "high"
+      },
+      {
+        "id": "serviceTier",
+        "value": "priority"
+      }
+    ]
+  },
+  "idleCompaction": "onReturn",
+  "autoResumeLimitedThreads": true
+}
