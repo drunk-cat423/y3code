@@ -48,12 +48,12 @@ python scripts/restore.py --configure-provider bailian --apply
 
 ## 恢复范围
 
-- T3 的五个提供方定义、各自模型列表和显示顺序。默认模型为官方 Codex `gpt-6.1-sol`，High，Priority。
+- T3 的五个提供方定义、各自模型列表和显示顺序。默认模型为官方 Codex `gpt-6.2-sol`，High，Priority。
 - 便携的界面偏好和快捷键。保留源机英文界面偏好，不复制窗口位置、麦克风、浏览器 profile 和项目收藏。
 - 可选个人 `AGENTS.md`、pstack 模型分工和 `pstack-auto` 入口。Ego、Cua Driver、pstack 插件按 [工具安装指引](docs/tools.md) 在新电脑安装。
 - Codex 主模型配置提供 [单独的参考片段](templates/agent/model-preferences.toml)，由 Codex 检查后合并。恢复器不复制完整 `config.toml`，不修改 MCP、权限、可信项目列表或旧角色 TOML。
 
-这是 2026-11-17 的配置快照，源机版本为 `0.1.10-nightly.20261116.4800`。模型名称和额度必须按新电脑实际账户确认。Priority 是源机设置，不保证账号支持或价格相同。Windows 已进行隔离目录恢复验证，macOS 和 Linux 尚未实机验证。
+基础配置采集于 2026-11-17，模型配置已于 2026-11-18 更新为 GPT-6.2，源机版本为 `0.1.10-nightly.20261116.4800`。模型名称和额度必须按新电脑实际账户确认。Priority 是源机设置，不保证账号支持或价格相同。Windows 已进行隔离目录恢复验证，macOS 和 Linux 尚未实机验证。
 
 程序的更新源指向官方 `pingdotgg/t3code` Nightly。尚未比对程序文件与原版是否一致，本仓库不分发或声称还原未知的二进制改造。详情见 [快照来源与限制](docs/snapshot.md)。
 

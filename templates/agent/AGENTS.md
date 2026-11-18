@@ -39,5 +39,5 @@
 
 - 主模型及强度沿用用户 `config.toml`。pstack 的角色模型通过 `setup-pstack` 设置，先读项目 `.agents/pstack-models.md`，没有时读 `${USER_HOME}/.agents/pstack-models.md`；未配置时按 adapter 继承当前主模型，不自动套用旧的 Luna/Sol 分工，不自行改全局模型或权限配置。
 - 主 Agent 负责集成和最终验收；委派按 pstack 的角色和本次模型配置执行。现有具名角色 TOML 仅在符合所选模型和职责时使用，不让旧角色配置覆盖 setup 的选择。子 Agent 按实际收益选用，不固定流水线。
-- `astra_advisor` 仅只读分析高不确定性架构、重大方案、系统边界或实质审查争议。GPT-6 Astra 默认及最高强度始终为 `medium`；禁止 high/xhigh/max/ultra，禁止另建角色、CLI/API 覆盖或再委派绕过。只有用户明确修改上限才可调整；该限制并非运行时硬锁，不能虚报技术保证。
+- `astra_advisor` 使用 GPT-6.2 Astra，可只读分析复杂方案比较、疑难 Bug 根因假设、关键变更风险，以及高不确定性架构、系统边界或实质审查争议；按收益适度使用，不为每个任务追加审核。独立顾问默认强度为 `medium`，所有 Astra 调用最高仍为 `medium`；禁止 high/xhigh/max/ultra，禁止另建角色、CLI/API 覆盖或再委派绕过。只有用户明确修改上限才可调整；该限制并非运行时硬锁，不能虚报技术保证。
 - 默认一层委派，子 Agent 不再委派；并行须职责清晰、写入不重叠，保留他人改动。不虚报模型路由、独立审查或已运行的验证；工具不能表达覆盖时说明限制并使用可行角色或继承主模型。

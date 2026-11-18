@@ -1,5 +1,5 @@
-# 源机 2026-11-17 的三个顶层偏好。供 Codex 检查后合并。
+# 源机 2026-11-18 的三个顶层偏好。供 Codex 检查后合并。
 # 不要用此文件替换完整 config.toml。账户能力和模型上下文上限需现场确认。
-model = "gpt-6.1-sol"
+model = "gpt-6.2-sol"
 model_reasoning_effort = "high"
 model_context_window = 1000000

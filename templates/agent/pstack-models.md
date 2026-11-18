@@ -2,15 +2,15 @@
 # defaults: 3
 # budget: medium
 
-feature, refactoring: gpt-6.1-sol high
-bug-fix: gpt-6.1-sol high
-perf-issue: gpt-6.1-sol xhigh
-hillclimb: gpt-6.1-sol high
-judgment and prose: gpt-6.1-sol high
-arena runners: gpt-6.1-sol high, deepseek-v4.1-flash-1017
+feature, refactoring: gpt-6.2-sol high
+bug-fix: gpt-6.2-sol high
+perf-issue: gpt-6.2-sol xhigh
+hillclimb: gpt-6.2-sol high
+judgment and prose: gpt-6.2-sol high
+arena runners: gpt-6.2-sol high, deepseek-v4.1-flash-1017
 arena cross-judge pool: deepseek-v4.1-flash-1017
 swarm workers: gpt-6-luna xhigh
-interrogate reviewers: gpt-6.1-sol xhigh, deepseek-v4.1-flash-1017
+interrogate reviewers: gpt-6.2-sol xhigh, gpt-6.2-astra medium, deepseek-v4.1-flash-1017
 
 ## Effective task policy
 
@@ -20,7 +20,9 @@ The role lines store starting levels in setup-pstack's format. Apply the medium 
 - Use Sol Medium for routine development, ordinary bug fixes and synthesis. The parent keeps product decisions and final integration.
 - Use Sol High for ambiguous debugging, concurrency, data consistency, difficult cross-module changes and consequential review. Raise the ordinary Sol role one step when those risks are present; a difficult performance role already starts at High after the budget.
 - Use Bailian DeepSeek for an independent design opinion, requirement comparison, stage review and cross-vendor judging. It is read-only unless the user explicitly assigns implementation. A staged review requested by the user remains mandatory; other tasks do not automatically acquire an extra review round.
-- Terra is not a default developer or reviewer. Astra is not a default execution seat: it is read-only, Medium at most, and reserved for major architecture, system boundaries or substantive review disputes. If the host cannot express the cap, do not start that Astra task.
+- Use GPT-6.2 Astra for bounded, read-only comparison of complex proposals, root-cause hypotheses in difficult bugs, and risk assessment for consequential changes, as well as architecture, system boundaries and substantive review disputes. Give it one focused question when the extra analysis helps; do not add a review stage to every task. It does not implement code.
+- The Astra interrogate entry starts at Medium and becomes Low after the medium budget. Raise it to Medium when the review risk warrants it. The named astra_advisor stays fixed at Medium. Every Astra invocation, including inherited options, is capped at Medium; never raise it to High or above. If the host cannot express the cap, leave that Astra seat unstarted.
+- Terra is not a default developer or reviewer.
 - Delegate when it saves context, time or provides a useful independent opinion. A Sol parent can handle a difficult task directly instead of spawning an identical worker. A failed check alone is not permission to retry an external or paid operation.
 
 ## Host routing

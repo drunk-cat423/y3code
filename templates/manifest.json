@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "source": {
     "capturedAt": "2026-11-17",
+    "modelConfigurationUpdatedAt": "2026-11-18",
     "platform": "Windows",
     "t3Version": "0.1.10-nightly.20261116.4800",
     "distribution": "Nightly",

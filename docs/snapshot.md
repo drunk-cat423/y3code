@@ -1,6 +1,6 @@
 # 快照来源与验证范围
 
-本仓库的配置快照采集于 2026-11-17，源机为 Windows。`templates/manifest.json` 保存版本和三个 API 渠道的配置目录映射，不含机器 ID 或凭证。
+本仓库的配置快照采集于 2026-11-17，源机为 Windows。模型配置于 2026-11-18 更新为 GPT-6.2，基础程序版本未随之更改。`templates/manifest.json` 保存版本和三个 API 渠道的配置目录映射，不含机器 ID 或凭证。
 
 ## 已读取的本机事实
 
@@ -8,8 +8,8 @@
 - 安装目录的 `resources/app-update.yml` 指向 GitHub 的 `pingdotgg/t3code`，Nightly 渠道。
 - `userdata/settings.json` 当前有 `codex`、`claudeAgent`、`redromance_claude`、`deepseek_official`、`bailian` 五个提供方。
 - 三个 API 渠道均有独立 `homePath`。模板保留安全环境变量和模型设置，排除 `ANTHROPIC_AUTH_TOKEN` 以及其他非白名单字段。
-- 默认模型为官方 Codex `gpt-6.1-sol`，`reasoningEffort=high`、`serviceTier=priority`。
-- Codex 主模型的独立参考片段是 `gpt-6.1-sol`、High、上下文 `1000000`。完整配置不在仓库中。
+- 默认模型为官方 Codex `gpt-6.2-sol`，`reasoningEffort=high`、`serviceTier=priority`。
+- Codex 主模型的独立参考片段是 `gpt-6.2-sol`、High、上下文 `1000000`。完整配置不在仓库中。
 - pstack 角色偏好和个人入口取自当前用户配置，源机已安装 pstack `0.15.43`。
 
 更新源指向官方发布不能证明安装目录未被修改。未做原版安装包逐文件比对，没有证据将此仓库称为定制 T3 程序的完整副本。
@@ -36,7 +36,7 @@
 
 通过临时用户目录验证实际模板的预览、恢复、重复运行、密钥注入和冲突保护。单元测试还覆盖无关字段保留、备份、symlink/junction 拒绝和凭证端点保护。交付记录见 [verification.md](verification.md)。
 
-源机真实 T3 配置保持只读。没有安装第二份 T3，没有做另一台实体电脑的恢复，没有复制登录态，也没有发起模型推理或计费测试。macOS 和 Linux 的真实安装、GUI 和账户鉴权尚未验证。
+初次迁移包制作时，源机真实 T3 配置保持只读。2026-11-18 按用户要求仅更新了默认模型选择和本机 Agent 分工，原配置已备份。没有安装第二份 T3，没有做另一台实体电脑的恢复，没有复制登录态，也没有发起模型推理或计费测试。macOS 和 Linux 的真实安装、GUI 和账户鉴权尚未验证。
 
 ## 更新快照
 

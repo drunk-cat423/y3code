@@ -63,7 +63,7 @@ codex plugin list --marketplace codex-pstack --json
 
 如果插件已经启用，不重复安装或擅自升级。源机版本 `0.15.43` 只作参考。未安装成功时说明，不声称自动工作流已生效。
 
-角色偏好位于新电脑的 `~/.agents/pstack-models.md`。它保留源机的 medium 预算换算、Sol/Luna 分工和百炼 DS 路由；插件安装不提供模型账户或额度。先核实提供方和模型可见，再执行真实任务。不要为验证自动发起额外模型调用。
+角色偏好位于新电脑的 `~/.agents/pstack-models.md`。2026-11-18 已将 Sol 更新为 `gpt-6.2-sol`，并在专项审查中增加 `gpt-6.2-astra`。Astra 仅只读，用于复杂方案、疑难根因与关键风险；独立顾问固定 Medium，审查席按 medium 预算从 Medium 降到 Low，按风险可升回 Medium，所有入口最高均为 Medium。它保留源机的 medium 预算换算、Sol/Luna 分工和百炼 DS 路由；插件安装不提供模型账户或额度。先核实提供方和模型可见，再执行真实任务。不要为验证自动发起额外模型调用。
 
 ## 复用已有环境恢复仓库
 
